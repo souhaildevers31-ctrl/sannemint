@@ -1540,21 +1540,7 @@ summary{cursor:pointer;padding:4px 0;font-weight:600}
   }
 
   /* ---------- question libre : réponse courte d'une IA (si le serveur est connecté) ---------- */
-  async function askGemini(q){
-    try {
-        const response = await fetch('/api/gemini', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt: q })
-        });
-        const data = await response.json();
-        if (data.error) throw new Error(data.error);
-        return data.reply;
-    } catch (error) {
-        console.error(error);
-        return "Désolé, une erreur est survenue avec l'API.";
-    }
-}
+v
   function selfTest(){
     const T = [], eq = (name, got, exp) => T.push({ name, ok:JSON.stringify(got) === JSON.stringify(exp), got });
     eq("durée 25 minutes", parseDuration("minuteur 25 minutes"), 1500000);
